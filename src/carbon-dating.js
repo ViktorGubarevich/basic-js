@@ -7,9 +7,15 @@ module.exports = function dateSample(sampleActivity) {
 
   if (typeof (sampleActivity) === 'string' && parseFloat(sampleActivity)) {
     sampleActivity = parseFloat(sampleActivity);
-  } else if (sampleActivity <= 0 || sampleActivity >= MODERN_ACTIVITY) {
-    return false;
   } else {
+    return false;
+  }
+
+  if (sampleActivity <= 0) {
+    return false;
+  }
+
+  if (sampleActivity >= MODERN_ACTIVITY) {
     return false;
   }
 
